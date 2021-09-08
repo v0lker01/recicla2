@@ -31,5 +31,7 @@ export default class Juego extends Phaser.Scene{
         logo.setCollideWorldBounds(true)
 
         emitter.startFollow(logo)
+
+        this.scene.start("menuPrincipal");
     }
 }
