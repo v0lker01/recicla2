@@ -5,15 +5,20 @@ export default class Juego extends Phaser.Scene{
     private _nivel: Nivel;
 
     constructor(nombreNivel: string, nivel: Nivel) {
-        super(nombreNivel);
+        super("Nivel1");
         this._nivel = nivel;
     }
 
     preload (){
 
+        this.load.image("TileSets", "assets/mapa/tileSets.png");
+        this.load.tilemapTiledJSON("Mapa", "assets/mapa/NivelPrueba2.json");        
+
     }
 
     create(){
+        const map = this.make.tilemap({key: "Mapa" });
+        const tilesets = map.addTilesetImage("tileSets", "tileSets");
         
     }
 

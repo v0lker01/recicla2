@@ -22,8 +22,12 @@ export default class MenuPrincipal extends Phaser.Scene{
         Creditos.setInteractive();
         Creditos.on("pointerdown", () => this.scene.start("creditos"));
 
+        //Boton Jugar
         this.add.image(965, 815, "BtnJugarSombra");
-        this.add.image(960, 800, "BtnJugar");
+        var Jugar = this.add.image(960, 800, "BtnJugar");
+        Jugar.setInteractive();
+        Jugar.on("pointerdown",() => this.scene.start("Nivel1"));
+
         this.add.image(1500, 820, "BtnTienda");
     }
 
